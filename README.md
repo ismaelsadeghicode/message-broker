@@ -4,6 +4,7 @@
 ````
 - https://phoenixnap.com/kb/install-apache-zookeeper
 ````
+
 ### config zookeeper
 ````
 sudo nano /opt/zookeeper/conf/zoo.cfg
@@ -14,10 +15,23 @@ sudo nano /opt/zookeeper/conf/zoo.cfg
 sudo  bin/zookeeper-server-start.sh config/zookeeper.properties
 sudo  bin/zookeeper-server-stop.sh config/zookeeper.properties
 ````
-
-
-
+### start kafka
+````
 sudo bin/kafka-server-start.sh config/server.properties      
+````
+
+### create topics in kafka
+````
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 6 --topic kafka_example
+````
+
+### kafka console consumer
+````
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_example --from-beginning
+````
+
+
+
 
 
 

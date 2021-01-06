@@ -18,7 +18,8 @@ public class UserResourceController {
     @Autowired
     private KafkaTemplate<String, User> kafkaTemplate;
 //    private KafkaTemplate<String, String> kafkaTemplate; (1)
-    private static final String TOPIC = "kafka_example";
+//    private static final String TOPIC = "kafka_example";
+    private static final String TOPIC = "kafkasample";
 
     @GetMapping("/publish/{name}")
     public String post(@PathVariable("name") String name){

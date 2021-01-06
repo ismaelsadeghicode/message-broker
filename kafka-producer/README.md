@@ -48,6 +48,7 @@ syncLimit = 2
 
 ### Starting the ZooKeeper Service
 ````
+cd /opt/zookeeper
 sudo bin/zkServer.sh start
 bin/zkCli.sh -server 127.0.0.1:2181
 help

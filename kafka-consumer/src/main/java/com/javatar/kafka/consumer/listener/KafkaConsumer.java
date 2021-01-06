@@ -1,4 +1,4 @@
-package listener;
+package com.javatar.kafka.consumer.listener;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

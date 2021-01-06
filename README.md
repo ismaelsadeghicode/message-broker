@@ -18,3 +18,14 @@ sudo  bin/zookeeper-server-stop.sh config/zookeeper.properties
 
 
 sudo bin/kafka-server-start.sh config/server.properties      
+
+
+
+
+
+## Erorr
+### not start kafka
+````
+rm -r /var/lib/kafka/data/*
+
+````

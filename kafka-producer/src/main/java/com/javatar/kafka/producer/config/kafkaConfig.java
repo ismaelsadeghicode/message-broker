@@ -1,0 +1,32 @@
+package com.javatar.kafka.producer.config;
+
+import com.fasterxml.jackson.databind.JsonSerializable;
+import org.springframework.kafka.support.serializer.JsonSerializer;
+import com.javatar.kafka.producer.model.User;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringSerializer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.KafkaTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Configuration
+public class kafkaConfig {
+
+    @Bean
+    public DefaultKafkaProducerFactory<String, User> producerFactory(){
+        Map<String, Object> config = new HashMap<>();
+        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        return new DefaultKafkaProducerFactory<>(config);
+    }
+
+    @Bean
+    public KafkaTemplate<String, User> kafkaTemplate(){
+        return new KafkaTemplate<>(producerFactory());
+    }
+}

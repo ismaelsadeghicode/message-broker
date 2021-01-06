@@ -26,6 +26,7 @@ sudo bin/kafka-server-start.sh config/server.properties
 ## Erorr
 ### not start kafka
 ````
-rm -r /var/lib/kafka/data/*
-
+1- rm -r /var/lib/kafka/data/*
+2- sudo  bin/zookeeper-server-start.sh config/zookeeper.properties
+3- sudo bin/kafka-server-start.sh config/server.properties       
 ````

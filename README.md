@@ -12,6 +12,8 @@ sudo nano /opt/zookeeper/conf/zoo.cfg
 
 ### start & stop zookeeper
 ````
+cd /opt/kafka/
+
 sudo  bin/zookeeper-server-start.sh config/zookeeper.properties
 sudo  bin/zookeeper-server-stop.sh config/zookeeper.properties
 ````

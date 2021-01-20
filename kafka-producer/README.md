@@ -241,5 +241,7 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_ex
 
 ### docker
 ````
+sudo apt-get install docker-compose
+
 docker-compose up
 ````
